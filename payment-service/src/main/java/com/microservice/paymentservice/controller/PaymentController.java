@@ -15,6 +15,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    // http://localhost:9191/payment/doPayment
     @PostMapping("/doPayment")
     public Payment doPayment(@RequestBody Payment payment) {
         return paymentService.doPayment(payment);

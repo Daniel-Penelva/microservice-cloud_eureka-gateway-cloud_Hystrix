@@ -15,6 +15,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    // http://localhost:9192/order/bookOrder
     @PostMapping("/bookOrder")
     public Order bookOrder(@RequestBody Order order) {
         return orderService.save(order);
