@@ -30,7 +30,7 @@ public class OrderService {
 
         // restTemplate - criando comunicação com o microserviço payment-service
         /* Faz uma solicitação POST para um serviço externo (microserviço de pagamento) com os detalhes do pagamento. Ele espera receber de volta um objeto Payment como resposta. */
-        Payment paymentResponse =  restTemplate.postForObject("http://localhost:9191/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse =  restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment, Payment.class);
 
         /* Verifica se o status do pagamento retornado é "sucesso". Se for, define uma mensagem de sucesso; caso contrário, define uma mensagem de falha. */
         response = paymentResponse.getPaymentStatus().equals("sucess")? "processamento de pagamento bem-sucedido e pedido realizado" : "há uma falha na API de pagamento, pedido adicionado ao carrinho";
