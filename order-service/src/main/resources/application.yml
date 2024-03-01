@@ -5,6 +5,8 @@ spring:
   h2:
     console:
       enabled: true
+  application:
+    name: ORDER-SERVICE
 
   datasource:
     url: jdbc:h2:mem:testOrderdb
@@ -15,5 +17,13 @@ spring:
       database-platform: org.hibernate.dialect.H2Dialect
       show-sql: true
 
-
 # http://localhost:9192/h2-console/
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
