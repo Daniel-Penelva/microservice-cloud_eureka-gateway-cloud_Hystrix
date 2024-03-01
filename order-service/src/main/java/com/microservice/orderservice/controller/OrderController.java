@@ -1,5 +1,8 @@
 package com.microservice.orderservice.controller;
 
+import com.microservice.orderservice.common.Payment;
+import com.microservice.orderservice.common.TransactionRequest;
+import com.microservice.orderservice.common.TransactionResponse;
 import com.microservice.orderservice.entity.Order;
 import com.microservice.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,8 @@ public class OrderController {
 
     // http://localhost:9192/order/bookOrder
     @PostMapping("/bookOrder")
-    public Order bookOrder(@RequestBody Order order) {
-        return orderService.save(order);
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest request) {
+
+        return orderService.save(request);
     }
 }
