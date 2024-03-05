@@ -1,5 +1,6 @@
 {
   "order":{
+    "id": 12,
     "name":"IPhone",
     "qty":1,
     "price":8000
@@ -7,3 +8,4 @@
   },
   "payment":{}
 }
+/* O id representa o id da ordem de serviço (orderId) */
